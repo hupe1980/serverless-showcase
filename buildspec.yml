@@ -4,17 +4,13 @@ phases:
   install:
     commands:
       - echo current node version `node --version`
-      - echo Installing yarn
-      - curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
-      - echo "deb http://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
-      - sudo apt-get -y update
-      - apt-get install -y yarn
-      - echo Installing global dependencies
-      - yarn global add lerna serverless
+      - npm install -g yarn
+      - yarn global add lerna
+      - yarn global add serverless
    pre_build:
     commands:
       - echo Bootstrap source code
-      - yarn
+      - yarn install
       - lerna bootstrap
       - yarn run test
   build:
