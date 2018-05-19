@@ -3,11 +3,13 @@ version: 0.2
 phases:
   install:
     commands:
-      - ls -lha
       - echo current node version `node --version`
-      - echo Installing system packages
+      - echo Installing yarn
+      - curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
+      - echo "deb http://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
+      - sudo apt-get -y update
+      - apt-get install -y yarn
       - echo Installing global dependencies
-      - npm install -g yarn
       - yarn global add lerna serverless
    pre_build:
     commands:
@@ -20,4 +22,4 @@ phases:
       - echo Build started on `date`
   post_build:
     commands:
-      - echo Build completed on `date`    
+      - echo Build completed on `date`
