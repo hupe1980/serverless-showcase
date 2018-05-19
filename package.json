@@ -2,13 +2,14 @@
   "name": "serverless-showcase",
   "version": "0.0.1",
   "private": true,
+  "scripts": {
+    "deploy": "lerna run deploy",
+    "test": "jest"
+  },
   "devDependencies": {
     "jest": "^22.4.4",
     "lerna": "^2.11.0",
     "serverless": "^1.27.2"
-  },
-  "scripts": {
-    "test": "jest"
   },
   "workspaces": [
     "packages/*"
