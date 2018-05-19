@@ -4,8 +4,7 @@ phases:
   install:
     commands:
       - echo current node version `node --version`
-      - npm install -g yarn
-      - yarn global add lerna
+      - npm install -g yarn lerna serverless
    pre_build:
     commands:
       - echo Bootstrap source code
