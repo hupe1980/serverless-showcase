@@ -5,8 +5,6 @@ import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import { withAuthenticator } from 'aws-amplify-react';
 
-import ChatBot from '../components/ChatBot';
-import Footer from '../components/Footer';
 import ProductsContainer from './ProductsContainer';
 import OrdersContainer from './OrdersContainer';
 
@@ -15,6 +13,7 @@ const styles = theme => ({
     flexGrow: 1,
     backgroundColor: theme.palette.background.paper,
   },
+  content: {},
 });
 
 class AppContainer extends Component {
@@ -38,10 +37,10 @@ class AppContainer extends Component {
             <Tab value="two" label="Orders" />
           </Tabs>
         </AppBar>
-        {value === 'one' && <ProductsContainer />}
-        {value === 'two' && <OrdersContainer />}
-        <Footer />
-        <ChatBot />
+        <div className={classes.content}>
+          {value === 'one' && <ProductsContainer />}
+          {value === 'two' && <OrdersContainer />}
+        </div>
       </div>
     );
   }

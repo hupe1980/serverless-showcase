@@ -1,5 +1,6 @@
 import React, { Component, Fragment } from 'react';
 
+import ChatBot from '../components/ChatBot';
 import OrderDialog from '../components/OrderDialog';
 import ProductList from '../components/ProductList';
 
@@ -51,6 +52,7 @@ class ProductsContainer extends Component {
           currentProduct={currentProduct}
           onClose={this.handleDialogClose}
         />
+        <ChatBot />
       </Fragment>
     );
   }

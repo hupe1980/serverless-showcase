@@ -17,13 +17,14 @@ provider:
         - dynamodb:DeleteItem
       Resource: "arn:aws:dynamodb:${opt:region, self:provider.region}:*:table/${self:provider.environment.DYNAMODB_TABLE}"
 functions:
+  bot:
+    handler: src/handler.bot
   create:
     handler: src/handler.create
     events:
       - http:
           path: products
           method: post
-          integration: lambda
           authorizer: aws_iam
           cors: true
   list:
@@ -32,7 +33,6 @@ functions:
       - http:
           path: products
           method: get
-          integration: lambda
           authorizer: aws_iam
           cors: true
 
