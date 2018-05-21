@@ -32,7 +32,7 @@ const ChatBot = ({ classes }) => (
       </ExpansionPanelSummary>
       <ExpansionPanelDetails>
         <LexChat
-          botName="BookTrip"
+          botName="ShowcaseBot"
           component={Chat}
           identityPoolId="us-east-1:cd6d5eb0-3f3a-4a9e-9348-d97c2ed72db1"
           initialText="Hello, what can I help you with?"

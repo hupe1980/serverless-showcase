@@ -3,7 +3,7 @@ service: execution-context-reuse
 provider:
   name: aws
   runtime: nodejs8.10
-  region: eu-central-1
+  region: us-east-1
 
 functions:
   hello:

@@ -23,6 +23,8 @@ functions:
       - http:
           path: products
           method: post
+          integration: lambda
+          authorizer: aws_iam
           cors: true
   list:
     handler: src/handler.list
@@ -30,6 +32,8 @@ functions:
       - http:
           path: products
           method: get
+          integration: lambda
+          authorizer: aws_iam
           cors: true
 
 resources:
