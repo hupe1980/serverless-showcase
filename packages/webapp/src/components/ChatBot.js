@@ -15,6 +15,9 @@ const styles = theme => ({
     right: 0,
     position: 'fixed',
     width: '50%',
+    maxHeight: '50%',
+    overflow: 'scroll',
+    border: '1px solid #ccc',
   },
   heading: {
     fontSize: theme.typography.pxToRem(15),
