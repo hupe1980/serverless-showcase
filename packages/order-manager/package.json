@@ -1,0 +1,12 @@
+{
+  "name": "order-manager",
+  "version": "0.0.1",
+  "private": "true",
+  "license": "MIT",
+  "scripts": {
+    "deploy": "serverless deploy"
+  },
+  "dependencies": {
+    "aws-sdk": "^2.243.1"
+  }
+}
