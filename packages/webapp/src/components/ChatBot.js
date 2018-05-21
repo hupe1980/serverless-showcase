@@ -25,6 +25,9 @@ const styles = theme => ({
   },
 });
 
+const pool = 'us-east-1:47971f6d-1ecd-4794-84c1-edbcd18b504e';
+//"us-east-1:cd6d5eb0-3f3a-4a9e-9348-d97c2ed72db1"
+
 const ChatBot = ({ classes }) => (
   <div className={classes.root}>
     <ExpansionPanel className={classes.panel}>
@@ -37,7 +40,7 @@ const ChatBot = ({ classes }) => (
         <LexChat
           botName="ShowcaseBot"
           component={Chat}
-          identityPoolId="us-east-1:cd6d5eb0-3f3a-4a9e-9348-d97c2ed72db1"
+          identityPoolId={pool}
           initialText="Hello, what can I help you with?"
         />
       </ExpansionPanelDetails>

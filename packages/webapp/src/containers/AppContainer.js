@@ -3,6 +3,7 @@ import { withStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
+import { withAuthenticator } from 'aws-amplify-react';
 
 import ProductsContainer from './ProductsContainer';
 import OrdersContainer from './OrdersContainer';
@@ -42,4 +43,6 @@ class AppContainer extends Component {
   }
 }
 
-export default withStyles(styles)(AppContainer);
+export default withStyles(styles)(
+  withAuthenticator(AppContainer, { includeGreetings: true }),
+);

@@ -17,7 +17,7 @@ const styles = {
     justifyContent: 'flex-end',
   },
   human: {
-    backgroundColor: 'red',
+    backgroundColor: '#ff4081',
     margin: '5px',
     padding: '5px 10px 5px 10px',
     borderRadius: '5px',
