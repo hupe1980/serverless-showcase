@@ -44,7 +44,7 @@ class ChatBot extends Component {
         <ExpansionPanel className={classes.panel}>
           <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
             <Typography className={classes.heading}>
-              Chat with me or call 012345
+              Chat with me or call +49 89 21093782
             </Typography>
           </ExpansionPanelSummary>
           <ExpansionPanelDetails>
