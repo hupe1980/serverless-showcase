@@ -4,6 +4,10 @@
   "private": "true",
   "license": "MIT",
   "scripts": {
-    "deploy": "serverless deploy"
+    "deploy": "serverless deploy",
+    "test": "jest --env=node"
+  },
+  "devDependencies": {
+    "jest": "^22.4.4"
   }
 }
