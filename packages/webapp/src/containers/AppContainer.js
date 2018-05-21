@@ -5,6 +5,8 @@ import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import { withAuthenticator } from 'aws-amplify-react';
 
+import ChatBot from '../components/ChatBot';
+import Footer from '../components/Footer';
 import ProductsContainer from './ProductsContainer';
 import OrdersContainer from './OrdersContainer';
 
@@ -38,6 +40,8 @@ class AppContainer extends Component {
         </AppBar>
         {value === 'one' && <ProductsContainer />}
         {value === 'two' && <OrdersContainer />}
+        <Footer />
+        <ChatBot />
       </div>
     );
   }

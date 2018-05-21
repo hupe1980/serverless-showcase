@@ -83,6 +83,15 @@ resources:
                   Action:
                     - "mobiletargeting:UpdateEndpoint"
                   Resource: "arn:aws:mobiletargeting:*:*:apps/*"
+                - Effect: Allow
+                  Action:
+                      - polly:SynthesizeSpeech
+                  Resource: '*'
+                - Effect: Allow
+                  Action:
+                      - lex:PostText
+                      - lex:PostContent
+                  Resource: '*'    
 
     CognitoAuthorizedRole:
       Type: "AWS::IAM::Role"
@@ -116,23 +125,15 @@ resources:
                   Action:
                     - "mobiletargeting:UpdateEndpoint"
                   Resource: "arn:aws:mobiletargeting:*:*:apps/*"
-          - PolicyName: PollySynth
-            PolicyDocument:
-                Version: 2012-10-17
-                Statement:
-                    - Effect: Allow
-                      Action:
-                          - polly:SynthesizeSpeech
-                      Resource: '*'
-          - PolicyName: LexPost
-            PolicyDocument:
-                Version: 2012-10-17
-                Statement:
-                    - Effect: Allow
-                      Action:
-                          - lex:PostText
-                          - lex:PostContent
-                      Resource: '*'
+                - Effect: Allow
+                  Action:
+                      - polly:SynthesizeSpeech
+                  Resource: '*'
+                - Effect: Allow
+                  Action:
+                      - lex:PostText
+                      - lex:PostContent
+                  Resource: '*'
 
     # Assigns the roles to the Identity Pool
     IdentityPoolRoleMapping:

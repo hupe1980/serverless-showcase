@@ -1,6 +1,5 @@
 import React, { Component, Fragment } from 'react';
 
-import ChatBot from '../components/ChatBot';
 import OrderDialog from '../components/OrderDialog';
 import ProductList from '../components/ProductList';
 
@@ -11,9 +10,7 @@ const products = [
   {
     id: 'wallbox',
     title: 'Wallbox',
-    description: `Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
-    eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
-    voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet
+    description: `At vero eos et accusam et justo duo dolores et ea rebum. Stet
     clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit
     amet.`,
     image: wallbox,
@@ -24,9 +21,7 @@ const products = [
     title: 'Tesla',
     description: `Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
     eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
-    voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet
-    clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit
-    amet.`,
+    voluptua.`,
     image: tesla,
     variants: ['Model 3', 'Model S'],
   },
@@ -56,7 +51,6 @@ class ProductsContainer extends Component {
           currentProduct={currentProduct}
           onClose={this.handleDialogClose}
         />
-        <ChatBot />
       </Fragment>
     );
   }
