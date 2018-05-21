@@ -23,17 +23,15 @@ functions:
     handler: src/handler.create
     events:
       - http:
-          path: products
+          path: orders
           method: post
-          authorizer: aws_iam
           cors: true
   list:
     handler: src/handler.list
     events:
       - http:
-          path: products
+          path: orders
           method: get
-          authorizer: aws_iam
           cors: true
 
 resources:

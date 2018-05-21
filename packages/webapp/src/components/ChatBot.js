@@ -26,9 +26,6 @@ const styles = theme => ({
   },
 });
 
-const pool = 'us-east-1:47971f6d-1ecd-4794-84c1-edbcd18b504e';
-//"us-east-1:cd6d5eb0-3f3a-4a9e-9348-d97c2ed72db1"
-
 class ChatBot extends Component {
   state = {
     credentials: null,
@@ -51,16 +48,18 @@ class ChatBot extends Component {
             </Typography>
           </ExpansionPanelSummary>
           <ExpansionPanelDetails>
-            {credentials && (
+            {credentials ? (
               <LexChat
                 botName="ShowcaseBot"
                 component={Chat}
-                //identityPoolId={pool}
+                identityPoolId="dummy"
                 initialText="Hello, what can I help you with?"
                 options={{
                   credentials,
                 }}
               />
+            ) : (
+              <div>Loading...</div>
             )}
           </ExpansionPanelDetails>
         </ExpansionPanel>

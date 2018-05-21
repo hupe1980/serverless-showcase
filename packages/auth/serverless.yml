@@ -5,10 +5,6 @@ provider:
   runtime: nodejs8.10
   region: us-east-1
 
-functions:
-  authorizer:
-    handler: handler.authorizer
-
 resources:
   Resources:
     UserPool:
@@ -91,7 +87,7 @@ resources:
                   Action:
                       - lex:PostText
                       - lex:PostContent
-                  Resource: '*'    
+                  Resource: '*'
 
     CognitoAuthorizedRole:
       Type: "AWS::IAM::Role"

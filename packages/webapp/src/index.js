@@ -18,6 +18,14 @@ Amplify.configure({
     // OPTIONAL - Enforce user authentication prior to accessing AWS resources or not
     //mandatorySignIn: true,
   },
+  API: {
+    endpoints: [
+      {
+        name: 'show-case-api',
+        endpoint: 'https://c56qsm49dl.execute-api.us-east-1.amazonaws.com/dev',
+      },
+    ],
+  },
 });
 
 ReactDOM.render(<AppContainer />, document.getElementById('root'));

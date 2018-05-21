@@ -18,46 +18,31 @@ const styles = theme => ({
   },
 });
 
-let id = 0;
-function createData(name, calories, fat, carbs, protein) {
-  id += 1;
-  return { id, name, calories, fat, carbs, protein };
-}
-
-const data = [
-  createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
-  createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
-  createData('Eclair', 262, 16.0, 24, 6.0),
-  createData('Cupcake', 305, 3.7, 67, 4.3),
-  createData('Gingerbread', 356, 16.0, 49, 3.9),
-];
-
-function Orders(props) {
-  const { classes } = props;
-
+const Orders = ({ classes, orders }) => {
   return (
     <Paper className={classes.root}>
       <Table className={classes.table}>
         <TableHead>
           <TableRow>
-            <TableCell>ID</TableCell>
-            <TableCell numeric>Product</TableCell>
-            <TableCell numeric>Point of delivery</TableCell>
-            <TableCell numeric>Desired delivery date</TableCell>
-            <TableCell numeric>Variant</TableCell>
+            <TableCell>Product</TableCell>
+            <TableCell>City</TableCell>
+            <TableCell>Date</TableCell>
+            <TableCell>Variant</TableCell>
+            <TableCell>State</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
-          {data.map(n => {
+          {orders.map(order => {
+            const { id, type, city, date, variant, state } = order;
             return (
-              <TableRow key={n.id}>
+              <TableRow key={id}>
                 <TableCell component="th" scope="row">
-                  {n.name}
+                  {type}
                 </TableCell>
-                <TableCell numeric>{n.calories}</TableCell>
-                <TableCell numeric>{n.fat}</TableCell>
-                <TableCell numeric>{n.carbs}</TableCell>
-                <TableCell numeric>{n.protein}</TableCell>
+                <TableCell>{city}</TableCell>
+                <TableCell>{date}</TableCell>
+                <TableCell>{variant}</TableCell>
+                <TableCell>{state}</TableCell>
               </TableRow>
             );
           })}
@@ -65,6 +50,6 @@ function Orders(props) {
       </Table>
     </Paper>
   );
-}
+};
 
 export default withStyles(styles)(Orders);
